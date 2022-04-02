@@ -7,6 +7,7 @@ import { Home } from "./pages/home/Home.js";
 import { Search } from "./pages/search/Search";
 import { Coins } from "./pages/coins/Coins.js";
 import { News } from "./pages/news/News.js";
+import { Coin } from './pages/coin/Coin.js';
 
 // styled
 import GlobalStyles from "./GlobalStyles";
@@ -28,6 +29,8 @@ function App() {
         <Route path='/coins' exact element={<Coins />} />
 
         <Route path='/news' exact element={<News />} />
+
+        <Route path='/coins:symbol' exact element={<Coin />} />
       </Routes>
       <Footer />
     </>
