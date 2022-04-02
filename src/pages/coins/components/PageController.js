@@ -8,26 +8,30 @@ export const PageController = ({ setPage, page }) => {
     <StyledController>
         {
             page > 1 ? (
-                <button onClick={setPage(page - 1)}>Prev</button>
+                <button onClick={() => setPage(page - 1)}>Prev</button>
             ): (
-                <></>
+                <button id="gray">Prev</button>
             )
         }
         <h4>{page}</h4>
-        <button onClick={setPage(page + 1)}>Next</button>
+        <button onClick={() => setPage(page + 1)}>Next</button>
     </StyledController>
   )
 }
 
 const StyledController = styled.section`
  display: flex;
+ justify-content: center;
+ width: 100%;
+ margin: 10px auto 50px auto;
     h4 {
         font-size: ${subtitleSize};
         color: ${titleColor};
+        margin: 0 10px;
     }
     button {
         background: ${palette.accentColor};
-        width: 200px;
+        width: 100px;
         height: 40px;
         color: #ffffff;
         border-radius: 4px;
@@ -47,6 +51,16 @@ const StyledController = styled.section`
             background: #ffffff;
             transition: 0.2s;
             transform: scale(1.01);
+        }
+    }
+    #gray {
+        background: ${palette.subtitleColor};
+        color: #000000;
+        &:hover{
+            color: #000000;
+            cursor: auto;
+            background: ${palette.subtitleColor};
+            transform: scale(1);
         }
     }
 

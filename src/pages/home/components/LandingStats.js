@@ -4,6 +4,9 @@ import axios from "axios";
 // styled
 import styled from "styled-components"
 
+// components
+import { Placeholder } from "./Placeholder";
+
 export const LandingStats = () => {
 
   const [ stats, setStats ] = useState();
@@ -30,7 +33,7 @@ export const LandingStats = () => {
     <StyledLanding>
       {
         stats === undefined ? (
-          <></>
+          <Placeholder />
         ): (
           <>
             <h2><span>{stats.coins} </span>Coins</h2>

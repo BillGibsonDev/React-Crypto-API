@@ -3,23 +3,22 @@ import axios from 'axios';
 
 // styled
 import styled from "styled-components"
+import * as palette from '../../styled/ThemeVariables.js';
 
-// images
-import SearchIcon from '../../images/icons/search0516F8.png';
-
-// redux
-import { connect } from 'react-redux'
-import { subtitleSize } from '../../styled/ThemeVariables';
+// components
+import { Searchbar } from './components/Searchbar.js';
+import  { CoinInfo } from './components/CoinInfo.js';
 
 export const Search = () => {
 
-  const [ input, setInput ] = useState("BTC");
+  const [ input, setInput ] = useState("");
   const [ coin, setCoin ] = useState();
 
   const handleCoin = () =>{
     axios.get(`https://coinlib.io/api/v1/coin?key=${process.env.REACT_APP_COINLIB_KEY}&pref=USD&symbol=${input}`)
     .then(function(response){
       console.log(response.data)
+      setCoin(response.data)
     })
     .catch(function(error){
       console.log(error)
@@ -34,45 +33,34 @@ export const Search = () => {
 
   return (
     <StyledSearch>
-      <label onClick={handleCoin} ><img src={SearchIcon} alt="" />
-        <input 
-          type="text" 
-          placeholder={"BTC"} 
-          onChange={(e) => {
-            setInput(e.target.value)}
-          } 
-          onKeyDown={(e) => onEnter(e)}
-        />
-      </label>
+      <Searchbar
+        handleCoin={handleCoin}
+        setInput={setInput}
+        onEnter={onEnter}
+      />
+      {
+        coin === undefined ? (
+          <h1>No Coin Yet..</h1>
+        ): (
+          <CoinInfo
+            symbol={coin.symbol}
+            name={coin.name}
+            price={coin.price}
+            markets={coin.markets}
+          />
+        )
+      }
     </StyledSearch>
   )
 }
 
 const StyledSearch = styled.section`
 min-height: 60vh;
-  label {
+  h1 {
+    color: ${palette.accentColor};
+    font-size: ${palette.titleSize};
     width: 100%;
-    margin: 30px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 25px;
-      margin-right: 6px;
-    }
-    input {
-      font-size: ${subtitleSize};
-      width: 200px;
-      height: 30px;
-      padding-left: 3px;
-      text-transform: uppercase;
-    }
+    text-align: center;
+    margin: 50px auto 30px auto;
   }
 `;
-
-
-const mapStateToProps = (state) => ({})
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search)

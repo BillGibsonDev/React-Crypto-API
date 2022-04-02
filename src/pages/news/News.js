@@ -23,8 +23,7 @@ export const News = () => {
                 }
             };
             axios.request(options).then(function(response){
-                console.log(response.data);
-                setNews(response.data)
+                setNews(response.data);
             }).catch(function (error) {
                 console.error(error);
             });
@@ -35,6 +34,7 @@ export const News = () => {
 
   return (
     <StyledNews>
+        <h1>Crypto News</h1>
         {
             news.map((article, index) =>{
                 return (
@@ -54,5 +54,11 @@ export const News = () => {
 }
 
 const StyledNews = styled.section`
-
+    h1 {
+    color: ${palette.accentColor};
+    font-size: ${palette.titleSize};
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 30px auto;
+    }
 `;

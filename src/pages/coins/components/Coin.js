@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import * as palette from '../../../styled/ThemeVariables.js';
 
+// router
+import { Link } from "react-router-dom";
+
 export const Coin = ({symbol, rank, name, price, volume, marketCap}) => {
 
   const [ newVolume, setNewVolume ] = useState();
@@ -22,36 +25,54 @@ export const Coin = ({symbol, rank, name, price, volume, marketCap}) => {
     }
     handleMarketCap();
     handleVolume();
-  }, [volume, marketCap])
+  }, [volume, marketCap, price])
   
   return (
     <StyledCoin>
-      <h2>{symbol}</h2>
-      <h2>{name}</h2>
-      <h3>{rank}</h3>
-      <h3>${price}</h3>
-      <h3>{newVolume}</h3>
-      <h3>${newMarketCap}</h3>
+      <td id="symbol"><Link to="/" id="title">{symbol}</Link></td>
+      <td><Link to="/" id="title">{name}</Link></td>
+      <td id="rank">{rank}</td>
+      <td><span>$</span>{price}</td>
+      <td>{newVolume}</td>
+      <td><span>$</span>{newMarketCap}</td>
     </StyledCoin>
   )
 }
 
-const StyledCoin = styled.div`
+const StyledCoin = styled.tr`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 1em;
-  border: 1px solid ${palette.subtitleColor};
-  height: 80px;
+  height: 40px;
   align-items: center;
-  padding: 0 2%;
   width: 100%;
   text-align: center;
-  h2 {
-    color: ${palette.titleColor};
-    font-size: ${palette.paraSize};
-  }
-  h3 {
+  td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-right: 1px solid ${palette.subtitleColor};
     color: ${palette.subtitleColor};
+    font-size: 12px;
+    min-width: 150px;
+    @media (max-width: 1060px){
+      min-width: 120px;
+      color: ${palette.titleColor};
+      font-size: 10px;
+    }
+    span {
+      color: ${palette.accentColor};
+    }
+  }
+  #title {
+    color: ${palette.titleColor};
     font-size: 14px;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+    @media (max-width: 1060px){
+      font-size: 12px;
+    }
   }
 `;

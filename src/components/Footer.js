@@ -17,7 +17,7 @@ export const Footer = () => {
             <a href="http://twitter.com/gibbycodes" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt="" /></a>
             <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt="" /></a>
         </div>
-        <h1>© Copyright, Crypto<span>Cache</span> 2022</h1>
+        <h1>©Crypto<span>Cache</span> 2022</h1>
     </StyledFooter>
   )
 }
@@ -31,13 +31,11 @@ margin: auto;
 min-height: 20vh;
 padding: 0 5%;
 background: #1a1919;
-    h1 {
-        color: ${palette.titleColor};
-        font-size: ${palette.subtitleSize};
-        span {
-            color: ${palette.accentColor};
-        }
-    }
+border-radius: 12px;
+@media(max-width: 750px){
+    flex-direction: column;
+    justify-content: center;
+}
     .icon-container {
         display: flex;
         align-items: center;
@@ -45,6 +43,17 @@ background: #1a1919;
             width: 30px;
             height: 30px;
             margin-right: 10px;
+        }
+    }
+    h1 {
+        color: ${palette.titleColor};
+        font-size: ${palette.subtitleSize};
+        @media(max-width: 750px){
+            font-size: ${palette.paraSize};
+            margin-top: 10px;
+        }
+        span {
+            color: ${palette.accentColor};
         }
     }
 `;
