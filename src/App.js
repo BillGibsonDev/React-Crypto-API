@@ -30,7 +30,7 @@ function App() {
 
         <Route path='/news' exact element={<News />} />
 
-        <Route path='/coins:symbol' exact element={<Coin />} />
+        <Route path='/coins/:symbol' exact element={<Coin />} />
       </Routes>
       <Footer />
     </>

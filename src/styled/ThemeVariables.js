@@ -7,4 +7,3 @@ export const titleColor = "#ffffff";
 export const titleSize = "50px";
 export const subtitleSize = "24px";
 export const paraSize = "18px";
-

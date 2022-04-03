@@ -37,22 +37,35 @@ export const Landing = () => {
 const StyledLanding = styled.section`
 min-height: 70vh;
 margin-top: 10%;
+  @media (max-width: 450px){
+    min-height: 50vh;
+  }
   .wrapper {
     display: flex;
     .title-container {
       width: 80%;
       z-index: 2;
+      @media (max-width: 450px){
+        width: 100%;
+      }
       h1 {
         display: flex;
         align-items: center;
         font-size: ${palette.titleSize};
         color: ${palette.titleColor};
         margin-bottom: 10px;
+        @media (max-width: 450px){
+          font-size: 20px;
+        }
         span img {
           display: flex;
           align-items: center;
           width: 20px;
           margin: 0 20px;
+          @media (max-width: 450px){
+            width: 10px;
+            margin: 0 8px;
+          }
         }
       }
       p {
@@ -60,6 +73,9 @@ margin-top: 10%;
         color: ${palette.subtitleColor};
         margin-bottom: 30px;
         max-width: 70%;
+        @media (max-width: 450px){
+          font-size: 10px;
+        }
       }
       a {
         background: ${palette.accentColor};
@@ -74,15 +90,16 @@ margin-top: 10%;
         font-size: ${palette.subtitleSize};
         padding: 2.5px 6px;
         border: none;
-        @media (max-width: 420px){
-            width: 85px;
+        @media (max-width: 450px){
+          width: 85px;
+          font-size: 16px;
         }
         &:hover{
-            color: #000000;
-            cursor: pointer;
-            background: #ffffff;
-            transition: 0.2s;
-            transform: scale(1.01);
+          color: #000000;
+          cursor: pointer;
+          background: #ffffff;
+          transition: 0.2s;
+          transform: scale(1.01);
         }
       }
     }
@@ -92,12 +109,22 @@ margin-top: 10%;
       flex-direction: column;
       position: relative;
       height: 350px;
+      @media (max-width: 450px){
+        width: 40%;
+        height: 200px;
+        position: absolute;
+        right: 0;
+      }
       img {
         width: 200px;
         height: 200px;
         border-radius: 20%;
         opacity: .9;
         object-fit: cover;
+         @media (max-width: 450px){
+          width: 100px;
+          height: 100px;
+        }
       }
       #top {
         position: absolute;

@@ -17,10 +17,10 @@ export const Ribbon = () => {
     <StyledRibbon>
         <h2>Popular Coins</h2>
         <div className="icon-container">
-            <Link to="/"><img src={Bitcoin} alt="" /><span>Bitcoin</span></Link>
-            <Link to="/"><img src={ETH} alt="" /><span>Ethereum</span></Link>
-            <Link to="/"><img src={Tether} alt="" /><span>Tether</span></Link>
-            <Link to="/"><img src={USDC} alt="" /><span>USDC</span></Link>
+            <Link to={`/coins/BTC`}><img src={Bitcoin} alt="" /><span>Bitcoin</span></Link>
+            <Link to={`/coins/ETH}`}><img src={ETH} alt="" /><span>Ethereum</span></Link>
+            <Link to={`/coins/USDT`}><img src={Tether} alt="" /><span>Tether</span></Link>
+            <Link to={`/coins/USDC`}><img src={USDC} alt="" /><span>USDC</span></Link>
         </div>
     </StyledRibbon>
   )
@@ -35,29 +35,41 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 border-radius: 8px;
-h2 {
-    width: 95%;
-    margin: 0 auto;
-    font-size: ${palette.subtitleSize};
-    color: ${palette.subtitleColor};
-}
-.icon-container {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: 0 auto;
-    a {
-        display: flex;
-        align-items: center;
-        font-size: ${palette.titleSize};
-        color: ${palette.titleColor};
-        img {
-            width: 30px;
-            height: 30px;
-        }
-        span {
-            margin-left: 6px;
+    h2 {
+        width: 95%;
+        margin: 0 auto;
+        font-size: ${palette.subtitleSize};
+        color: ${palette.subtitleColor};
+        @media (max-width: 450px){
+            font-size: 20px;
+            margin-bottom: 10px;
         }
     }
-}
+    .icon-container {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin: 0 auto;
+        @media (max-width: 450px){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 1em;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            font-size: ${palette.titleSize};
+            color: ${palette.titleColor};
+            @media (max-width: 450px){
+                font-size: 20px;
+            }
+            img {
+                width: 30px;
+                height: 30px;
+            }
+            span {
+                margin-left: 6px;
+            }
+        }
+    }
 `;

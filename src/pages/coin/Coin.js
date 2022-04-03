@@ -30,10 +30,18 @@ export const Coin = () => {
     
   return (
     <StyledCoin>
-        <h1>{coin.symbol}</h1>
+      {
+        coin === undefined ? (
+          <></>
+        ): (
+          <h1>{coin.symbol}</h1>
+        )
+      }
     </StyledCoin>
   )
 }
 
 
-const StyledCoin = styled.div``;
+const StyledCoin = styled.div`
+min-height: 60vh;
+`;

@@ -56,9 +56,15 @@ margin-top: 20px;
     font-size: 20px;
     color: #bdbdbd;
     margin-right: 30px;
+    @media (max-width: 450px){
+      font-size: 12px;
+    }
     span {
       font-size: 30px;
       color: #ffffff;
+      @media (max-width: 450px){
+        font-size: 16px;
+      }
     }
   }
 

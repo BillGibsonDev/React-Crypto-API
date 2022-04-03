@@ -29,8 +29,8 @@ export const Coin = ({symbol, rank, name, price, volume, marketCap}) => {
   
   return (
     <StyledCoin>
-      <td id="symbol"><Link to="/" id="title">{symbol}</Link></td>
-      <td><Link to="/" id="title">{name}</Link></td>
+      <td id="symbol"><Link to={`/coins/${symbol}`} id="title">{symbol}</Link></td>
+      <td><Link to={`/coins/${symbol}`} id="title">{name}</Link></td>
       <td id="rank">{rank}</td>
       <td><span>$</span>{price}</td>
       <td>{newVolume}</td>

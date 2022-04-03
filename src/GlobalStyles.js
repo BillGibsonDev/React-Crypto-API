@@ -18,11 +18,12 @@ html {
         font-size: 90%;
     } 
     @media (max-width: 1220px){
-        width: 90%
+        width: 90%;
+        font-size: 70%;
     }
     @media (max-width: 750px){
         font-size: 50%;
-        width: 100%;
+        width: 95%;
     } 
 }
 

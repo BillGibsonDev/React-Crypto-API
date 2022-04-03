@@ -45,6 +45,9 @@ margin-top: 10%;
         color: ${palette.titleColor};
         width: 100%;
         margin-bottom: 50px;
+        @media (max-width: 450px){
+            font-size: 20px;
+        }
         span img {
             display: flex;
             align-items: center;
@@ -70,6 +73,7 @@ margin-top: 10%;
             border-radius: 8px;
             @media (max-width: 1000px){
                 width: 90%;
+                margin-bottom: 20px;
             }
             img {
                 width: 35px;
