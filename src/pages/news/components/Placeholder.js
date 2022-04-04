@@ -7,21 +7,18 @@ export const Placeholder = () => {
         <div className="placeholder"></div>
         <div className="placeholder"></div>
         <div className="placeholder"></div>
-        <div className="placeholder"></div>
-        <div className="placeholder"></div>
     </StyledPlaceholder>
   )
 }
 
 const StyledPlaceholder = styled.section`
 display: flex;
-min-height: 70vh;
 flex-direction: column;
   .placeholder {
     width: 100%;
-    height: 100px;
-    background: #2b2b2bc5;
-    margin: 10px auto;
+    height: 200px;
+    background: #252525c5;
+    margin: 20px auto;
     border-radius: 6px;
   }
 `;

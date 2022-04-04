@@ -22,7 +22,6 @@ html {
         font-size: 70%;
     }
     @media (max-width: 750px){
-        font-size: 50%;
         width: 95%;
     } 
 }

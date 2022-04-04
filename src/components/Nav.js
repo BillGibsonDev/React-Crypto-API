@@ -71,79 +71,80 @@ min-height: 8vh;
         justify-content: space-between;
         align-items: center;
         width: 400px;
-        @media (max-width: 1050px){
+        @media (max-width: 850px){
             display: none;
         }
         a {
             font-size: ${palette.subtitleSize};
             color: ${palette.titleColor};
             font-weight: 600;
+            border-bottom: 2px solid #000000;
             &:hover {
-                border-bottom: 1px solid ${palette.accentColor};
+                border-bottom: 2px solid ${palette.accentColor};
             }
         }
     }
     .overlay {
-            height: 100%;
-            width: 0;
-            position: fixed; 
-            left: 0;
-            top: 0;
-            background-color: rgb(0,0,0); 
-            overflow-x: hidden; 
-            transition: 0.5s;
-            z-index: 99; 
-                button {
-                    position: absolute;
-                    top: 20px;
-                    right: 45px;
-                    font-size: 60px;
-                    color: #818181;
-                    background: transparent;
-                    border: none;
-                    cursor: pointer;
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); 
+    overflow-x: hidden; 
+    transition: 0.5s;
+    z-index: 99; 
+        button {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            color: #818181;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            &:hover, &:focus {
+                transition: 0.3s;
+                transform: scale(1.1);
+            }
+        }
+        .overlayContent {
+            position: relative;
+            top: 10%; 
+            width: 50%;
+            margin: auto;
+            margin-top: 30px;
+            z-index: 99;
+            a {
+                display: flex;
+                justify-content: center;
+                font-size: 2em;
+                color: white;
+                margin: 20px;
+                transition: 0.3s;
+                font-size: 3em; 
                     &:hover, &:focus {
-                        transition: 0.3s;
-                        transform: scale(1.1);
-                    }
-                }
-                .overlayContent {
-                    position: relative;
-                    top: 10%; 
-                    width: 50%;
-                    margin: auto;
-                    margin-top: 30px;
-                    z-index: 99;
-                    a {
-                        display: flex;
-                        justify-content: center;
-                        font-size: 2em;
-                        color: white;
-                        margin: 20px;
-                        transition: 0.3s;
-                        font-size: 3em; 
-                            &:hover, &:focus {
-                            color: #f1f1f1;
-                            transition: 0.3s;
-                            transform: scale(1.1);
-                        }
-                    }
-                } 
-            }
-            #hamburger {
-                cursor: pointer;
-                display: none;
-                width: 40px;
-                height: 30px;
-                &:hover, &:focus {
+                    color: #f1f1f1;
                     transition: 0.3s;
-                    transform: rotateZ(20deg);
-                }
-                @media (max-width: 1050px){
-                    display: block;
-                }
-                @media (max-width: 750px){
-                    width: 30px;
+                    transform: scale(1.1);
                 }
             }
+        } 
+    }
+    #hamburger {
+        cursor: pointer;
+        display: none;
+        width: 40px;
+        height: 30px;
+        &:hover, &:focus {
+            transition: 0.3s;
+            transform: rotateZ(20deg);
+        }
+        @media (max-width: 850px){
+            display: block;
+        }
+        @media (max-width: 750px){
+            width: 30px;
+        }
+    }
 `;

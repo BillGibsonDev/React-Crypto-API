@@ -36,16 +36,16 @@ export const Landing = () => {
 
 const StyledLanding = styled.section`
 min-height: 70vh;
-margin-top: 10%;
-  @media (max-width: 450px){
-    min-height: 50vh;
+margin: 20px 0;
+  @media (max-width: 950px){
+    min-height: 60vh;
   }
   .wrapper {
     display: flex;
     .title-container {
       width: 80%;
       z-index: 2;
-      @media (max-width: 450px){
+      @media (max-width: 950px){
         width: 100%;
       }
       h1 {
@@ -54,6 +54,12 @@ margin-top: 10%;
         font-size: ${palette.titleSize};
         color: ${palette.titleColor};
         margin-bottom: 10px;
+        @media (max-width: 1200px){
+          font-size: 40px;
+        }
+        @media (max-width: 1000px){
+          font-size: 30px;
+        }
         @media (max-width: 450px){
           font-size: 20px;
         }
@@ -75,6 +81,7 @@ margin-top: 10%;
         max-width: 70%;
         @media (max-width: 450px){
           font-size: 10px;
+          max-width: 50%;
         }
       }
       a {
@@ -91,8 +98,9 @@ margin-top: 10%;
         padding: 2.5px 6px;
         border: none;
         @media (max-width: 450px){
-          width: 85px;
+          width: 150px;
           font-size: 16px;
+          margin-top: 60px;
         }
         &:hover{
           color: #000000;
@@ -109,9 +117,16 @@ margin-top: 10%;
       flex-direction: column;
       position: relative;
       height: 350px;
+      z-index: 1;
+      @media (max-width: 766px){
+        width: 250px;
+        height: 300px;
+        position: absolute;
+        right: 0;
+      }
       @media (max-width: 450px){
         width: 40%;
-        height: 200px;
+        height: 300px;
         position: absolute;
         right: 0;
       }
@@ -121,7 +136,11 @@ margin-top: 10%;
         border-radius: 20%;
         opacity: .9;
         object-fit: cover;
-         @media (max-width: 450px){
+        @media (max-width: 800px){
+          width: 150px;
+          height: 150px;
+        }
+        @media (max-width: 450px){
           width: 100px;
           height: 100px;
         }
@@ -129,6 +148,10 @@ margin-top: 10%;
       #top {
         position: absolute;
         right: 0;
+        @media (max-width: 450px){
+          top: 30%;
+          right: 10%;
+        }
       }
       #bottom {
         position: absolute;

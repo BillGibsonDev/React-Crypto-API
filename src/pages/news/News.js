@@ -7,11 +7,13 @@ import * as palette from '../../styled/ThemeVariables.js';
 
 // components
 import { Article } from './components/Article';
+import { Placeholder } from './components/Placeholder.js';
 
 export const News = () => {
 
     const [ news, setNews ] = useState([]);
-
+    const [ loading, setLoading ] = useState(true);
+    
     useEffect(() => {
         const handleNews = () => {
             const options = {
@@ -24,6 +26,7 @@ export const News = () => {
             };
             axios.request(options).then(function(response){
                 setNews(response.data);
+                setLoading(false)
             }).catch(function (error) {
                 console.error(error);
             });
@@ -36,29 +39,42 @@ export const News = () => {
     <StyledNews>
         <h1>Crypto News</h1>
         {
-            news.map((article, index) =>{
-                return (
-                    <Article
-                        key={index}
-                        title={article.title}
-                        image={article.image}
-                        date={article.date}
-                        desc={article.desc}
-                        site={`https://www.coindesk.com${article.url}`}
-                    />
-                )
-            })
+            loading === true ? (
+                <Placeholder />
+            ): (
+                <>
+                    {
+                        news.map((article, index) =>{
+                            return (
+                                <Article
+                                    key={index}
+                                    title={article.title}
+                                    image={article.image}
+                                    date={article.date}
+                                    desc={article.desc}
+                                    site={`https://www.coindesk.com${article.url}`}
+                                />
+                            )
+                        })
+                    }
+                </>
+            )
         }
     </StyledNews>
   )
 }
 
 const StyledNews = styled.section`
+min-height: 70vh;
     h1 {
     color: ${palette.accentColor};
     font-size: ${palette.titleSize};
     width: 100%;
     text-align: center;
     margin: 50px auto 30px auto;
+        @media (max-width: 800px){
+            margin-top: 10px;
+            font-size: 30px;
+        }
     }
 `;

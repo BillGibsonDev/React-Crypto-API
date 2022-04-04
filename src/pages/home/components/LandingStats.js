@@ -49,6 +49,10 @@ export const LandingStats = () => {
 const StyledLanding = styled.section`
 display: flex;
 margin-top: 20px;
+z-index: 2;
+  @media (max-width: 450px){
+    margin: 50px auto;
+  }
   h2 {
     display: flex;
     flex-direction: column;

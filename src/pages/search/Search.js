@@ -13,12 +13,15 @@ export const Search = () => {
 
   const [ input, setInput ] = useState("");
   const [ coin, setCoin ] = useState();
+  const [ loading, setLoading ] = useState(false)
 
   const handleCoin = () =>{
+    setLoading(true);
     axios.get(`https://coinlib.io/api/v1/coin?key=${process.env.REACT_APP_COINLIB_KEY}&pref=USD&symbol=${input}`)
     .then(function(response){
       console.log(response.data)
-      setCoin(response.data)
+      setCoin(response.data);
+      setLoading(false);
     })
     .catch(function(error){
       console.log(error)
@@ -39,8 +42,10 @@ export const Search = () => {
         onEnter={onEnter}
       />
       {
-        coin === undefined ? (
-          <h1>No Coin Yet..</h1>
+        coin === undefined && loading === false ? (
+          <></>
+        ): loading === true ? (
+          <h1>Searching..</h1>
         ): (
           <CoinInfo
             symbol={coin.symbol}
@@ -55,12 +60,16 @@ export const Search = () => {
 }
 
 const StyledSearch = styled.section`
-min-height: 60vh;
+min-height: 70vh;
   h1 {
     color: ${palette.accentColor};
     font-size: ${palette.titleSize};
     width: 100%;
     text-align: center;
     margin: 50px auto 30px auto;
+    @media (max-width: 450px){
+      margin-top: 10px;
+      font-size: 30px;
+    }
   }
 `;

@@ -19,12 +19,14 @@ export const Coins = () => {
   const [ coinlist, setCoinlist ] = useState([]);
   const [ page, setPage ] = useState(1);
   const [ input, setInput ] = useState("rank_asc");
+  const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
     const handleCoinList = () => {
       axios.get(`https://coinlib.io/api/v1/coinlist?key=${process.env.REACT_APP_COINLIB_KEY}&pref=USD&page=${page}&order=${input}`)
       .then(function(response){
-        setCoinlist(response.data.coins)
+        setCoinlist(response.data.coins);
+        setLoading(false);
       })
       .catch(function(error){
         console.log(error)
@@ -37,7 +39,7 @@ export const Coins = () => {
     <StyledPage>
       <h1>Coins</h1>
       {
-        coinlist === undefined ? (
+        loading === true ? (
           <Placeholder />
         ): (
           <>
@@ -76,23 +78,29 @@ export const Coins = () => {
 }
 
 const StyledPage = styled.section`
-h1 {
-  color: ${palette.accentColor};
-  font-size: ${palette.titleSize};
-  width: 100%;
-  text-align: center;
-  margin: 50px auto 30px auto;
-}
-table {
-  border: 1px solid ${palette.subtitleColor};
-  @media (max-width: 1060px){
-    overflow-x: scroll;
-      scrollbar-width: thin;
-      scrollbar-color: #4e4e4e #fff; 
+min-height: 70vh;
+  h1 {
+    color: ${palette.accentColor};
+    font-size: ${palette.titleSize};
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 30px auto;
+    @media (max-width: 760px){
+      margin: 20px auto;
+      font-size: 30px;
     }
   }
+  table {
+    border: 1px solid ${palette.subtitleColor};
+    display: block;
+    @media (max-width: 1060px){
+      overflow-x: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: #4e4e4e #fff; 
+      }
+    }
 
-table tr:nth-child(even){background-color: #222121;}
+  table tr:nth-child(even){background-color: #222121;}
 `;
 
 

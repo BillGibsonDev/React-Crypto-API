@@ -35,6 +35,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 border-radius: 8px;
+    @media (max-width: 450px){
+        margin-bottom: 100px;
+    }
     h2 {
         width: 95%;
         margin: 0 auto;
@@ -50,16 +53,23 @@ border-radius: 8px;
         justify-content: space-between;
         width: 95%;
         margin: 0 auto;
-        @media (max-width: 450px){
+        @media (max-width: 750px){
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-row-gap: 1em;
+            margin-bottom: 20px;
         }
         a {
             display: flex;
             align-items: center;
             font-size: ${palette.titleSize};
             color: ${palette.titleColor};
+            @media (max-width: 1150px){
+                font-size: 40px;
+            }
+            @media (max-width: 950px){
+                font-size: 30px;
+            }
             @media (max-width: 450px){
                 font-size: 20px;
             }
