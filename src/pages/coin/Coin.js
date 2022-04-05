@@ -22,8 +22,7 @@ export const Coin = () => {
       const handleCoin = () =>{
         axios.get(`https://coinlib.io/api/v1/coin?key=${process.env.REACT_APP_COINLIB_KEY}&pref=USD&symbol=${symbol}`)
         .then(function(response){
-        console.log(response.data)
-        setCoin(response.data)
+        setCoin(response.data);
         })
         .catch(function(error){
         console.log(error)

@@ -19,7 +19,6 @@ export const Search = () => {
     setLoading(true);
     axios.get(`https://coinlib.io/api/v1/coin?key=${process.env.REACT_APP_COINLIB_KEY}&pref=USD&symbol=${input}`)
     .then(function(response){
-      console.log(response.data)
       setCoin(response.data);
       setLoading(false);
     })
