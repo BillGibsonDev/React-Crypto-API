@@ -42,7 +42,7 @@ export const Search = () => {
       />
       {
         coin === undefined && loading === false ? (
-          <></>
+          <h1>Exact Symbols Only</h1>
         ): loading === true ? (
           <h1>Searching..</h1>
         ): (

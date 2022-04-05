@@ -22,12 +22,12 @@ export const Info = () => {
             <article>
                 <img src={Share} alt="" />
                 <h2>SHARE</h2>
-                <p>Search thousands of cryptocurrencies across thousands of markets.</p>   
+                <p>Share cryptocurrencies with friends, neighbors and coworkers.</p>   
             </article>
             <article>
                 <img src={Earn} alt="" />
                 <h2>EARN</h2>
-                <p>Search thousands of cryptocurrencies across thousands of markets.</p>   
+                <p>Stay ahead of the game. Know when to buy and sell to maximize profits.</p>   
             </article>
         </div>
     </StyledInfo>

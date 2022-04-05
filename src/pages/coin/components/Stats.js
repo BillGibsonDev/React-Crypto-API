@@ -21,7 +21,7 @@ export const Stats = ({coin}) => {
             Number(coin.delta_24h) < 0 ? (
               <h3 id="red"><span>24hr:</span> {Number(coin.delta_24h)}%</h3>
             ): (
-              <h3><span>24h:</span> {Number(coin.delta_24h)}%</h3>
+              <h3><span>24hr:</span> {Number(coin.delta_24h)}%</h3>
             )
           }
           {
@@ -52,7 +52,7 @@ export const Stats = ({coin}) => {
 const StyledStats = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
-max-width: 500px;
+max-width: 600px;
   h3 {
     color: ${palette.titleColor};
     margin: 6px 0;

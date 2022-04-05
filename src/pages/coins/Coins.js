@@ -5,9 +5,6 @@ import axios from 'axios';
 import styled from "styled-components";
 import * as palette from '../../styled/ThemeVariables.js';
 
-// redux
-import { connect } from 'react-redux';
-
 // components
 import { Coin } from './components/Coin.js';
 import { Guide } from './components/Guide.js';
@@ -102,10 +99,3 @@ min-height: 70vh;
 
   table tr:nth-child(even){background-color: #222121;}
 `;
-
-
-const mapStateToProps = (state) => ({})
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Coins)
