@@ -26,7 +26,10 @@ export const Guide = ({setInput, input}) => {
             ): input === "rank_desc" ? (
               <img src={Triangle} alt="" />
             ):(
-              <></>
+              <div className="image-container">
+                <img src={Triangle} alt="" />
+                <img id="down" src={Triangle} alt="" />
+              </div>
             )
           }
         </span>
@@ -47,7 +50,10 @@ export const Guide = ({setInput, input}) => {
             ): input === "price_desc" ? (
               <img id="down" src={Triangle} alt="" />
             ): (
-              <></>
+              <div className="image-container">
+                <img src={Triangle} alt="" />
+                <img id="down" src={Triangle} alt="" />
+              </div>
             )
           }
         </span>
@@ -68,7 +74,10 @@ export const Guide = ({setInput, input}) => {
             ): input === "volume_desc" ? (
               <img id="down" src={Triangle} alt="" />
             ):(
-              <></>
+              <div className="image-container">
+                <img src={Triangle} alt="" />
+                <img id="down" src={Triangle} alt="" />
+              </div>
           )}
         </span>
       </th>
@@ -96,7 +105,7 @@ text-align: center;
     justify-content: center;
     span img {
       display: flex;
-      width: 15px;
+      width: 12px;
       margin-left: 6px;
     }
     #down {

@@ -7,7 +7,7 @@ import * as palette from '../../styled/ThemeVariables.js';
 
 // components
 import { Searchbar } from './components/Searchbar.js';
-import  { CoinInfo } from './components/CoinInfo.js';
+import  { Coin } from './components/Coin.js';
 
 export const Search = () => {
 
@@ -47,11 +47,8 @@ export const Search = () => {
         ): loading === true ? (
           <h1>Searching..</h1>
         ): (
-          <CoinInfo
-            symbol={coin.symbol}
-            name={coin.name}
-            price={coin.price}
-            markets={coin.markets}
+          <Coin
+            coin={coin}
           />
         )
       }

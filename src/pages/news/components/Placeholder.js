@@ -15,7 +15,7 @@ const StyledPlaceholder = styled.section`
 display: flex;
 flex-direction: column;
   .placeholder {
-    width: 100%;
+    width: 70%;
     height: 200px;
     background: #252525c5;
     margin: 20px auto;
