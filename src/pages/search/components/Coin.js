@@ -16,11 +16,9 @@ export const Coin = ({coin}) => {
         <h3 id="rank">Rank: {coin.rank}</h3>
       </div>
       {
-        Number(coin.price) > 10 ? (
-          <h2>${Number(coin.price).toFixed(2)}</h2>
-        ):(
-          <h2>${coin.price}</h2>
-        )
+        Number(coin.price) > 10 
+        ? <h2>${Number(coin.price).toFixed(2)}</h2>
+        : <h2>${coin.price}</h2>
       }
       <Stats
         coin={coin}

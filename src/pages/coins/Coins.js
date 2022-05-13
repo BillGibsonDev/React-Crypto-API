@@ -36,10 +36,9 @@ export const Coins = () => {
     <StyledPage>
       <h1>Coins</h1>
       {
-        loading === true ? (
-          <Placeholder />
-        ): (
-          <>
+        loading === true 
+        ? <Placeholder />
+        : <>
             <table>
               <tbody>
                   <Guide
@@ -67,8 +66,7 @@ export const Coins = () => {
               setPage={setPage}
               page={page}
             />
-          </>
-        )
+        </>
       }
     </StyledPage>
   )

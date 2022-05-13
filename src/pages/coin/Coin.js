@@ -34,10 +34,9 @@ export const Coin = () => {
   return (
     <StyledCoin>
       {
-        coin === undefined ? (
-          <></>
-        ): (
-          <>
+        coin === undefined 
+          ? <></>
+          : <>
             <div className="title-container">
               <h2>{coin.symbol} - </h2>
               <h2>{coin.name}</h2>
@@ -65,8 +64,7 @@ export const Coin = () => {
               })
             }
           </>
-        )
-      }
+        }
     </StyledCoin>
   )
 }

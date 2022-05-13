@@ -39,26 +39,24 @@ export const News = () => {
     <StyledNews>
         <h1>Crypto News</h1>
         {
-            loading === true ? (
-                <Placeholder />
-            ): (
-                <>
-                    {
-                        news.map((article, index) =>{
-                            return (
-                                <Article
-                                    key={index}
-                                    title={article.title}
-                                    image={article.image}
-                                    date={article.date}
-                                    desc={article.desc}
-                                    site={`https://www.coindesk.com${article.url}`}
-                                />
-                            )
-                        })
-                    }
-                </>
-            )
+            loading === true ?
+            <Placeholder />
+            : <>
+                {
+                    news.map((article, index) =>{
+                        return (
+                            <Article
+                                key={index}
+                                title={article.title}
+                                image={article.image}
+                                date={article.date}
+                                desc={article.desc}
+                                site={`https://www.coindesk.com${article.url}`}
+                            />
+                        )
+                    })
+                }
+            </>
         }
     </StyledNews>
   )

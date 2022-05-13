@@ -32,15 +32,13 @@ export const LandingStats = () => {
   return (
     <StyledLanding>
       {
-        stats === undefined ? (
-          <Placeholder />
-        ): (
-          <>
-            <h2><span>{stats.coins} </span>Coins</h2>
-            <h2><span>{stats.markets} </span> Markets</h2>
-            <h2><span>${volume}</span> 24hr Volume</h2>
-          </>
-        )
+        stats === undefined 
+          ? <Placeholder />
+          : <>
+              <h2><span>{stats.coins} </span>Coins</h2>
+              <h2><span>{stats.markets} </span> Markets</h2>
+              <h2><span>${volume}</span> 24hr Volume</h2>
+            </>
       }
     </StyledLanding>
   )
